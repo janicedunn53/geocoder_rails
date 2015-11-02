@@ -1,0 +1,15 @@
+<h2>Figuring out Google Maps API</h2>
+
+
+<% @places.each do |place| %>
+  <p><%= place.name %> - <%= place.address %></p>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{place.latitude}%2C#{place.longitude}" %>
+<% end %>
+
+<p><%= link_to "Add a new Place", new_place_path %><p>
+
+  <!-- <% my_url = "http://maps.google.com/maps/api/staticmap?size=800x600&sensor=false&zoom=15" %>
+  <% @places.each do |place| %>
+  <% my_url += "&markers=#{place.latitude}%2C#{place.longitude}" %>
+  <% end %>
+  <%= image_tag my_url %> -->
