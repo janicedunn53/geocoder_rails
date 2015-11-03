@@ -5,7 +5,7 @@
   <p><%= place.name %> - <%= place.address %></p>
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{place.latitude}%2C#{place.longitude}" %>
 <% end %> -->
-
+<h1>Map 1: Static</h1>
 <p><%= link_to "Add a new Place", new_place_path %><p>
 
 <% my_url = "http://maps.google.com/maps/api/staticmap?size=800x600&sensor=false&zoom=14" %>
@@ -17,3 +17,9 @@
 <% @places.each do |place| %>
   <p><%= place.name %> - <%= place.address %></p>
 <% end %>
+
+<h1>Map 2: Dynamic</h1>
+
+<div id="map-container">
+  <div id="map-canvas"></div>
+</div>
